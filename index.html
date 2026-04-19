@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規会員キャンペーン POP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .font-serif {
+            font-family: 'Noto Serif JP', serif;
+        }
+        .a4-paper {
+            width: 210mm;
+            height: 297mm;
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            padding: 15px 40px;
+        }
+        @media print {
+            body { background-color: white; padding: 0; margin: 0; }
+            .a4-paper { box-shadow: none; width: 100%; height: 100%; border: none; padding: 30px; }
+            [contenteditable="true"] { background-color: transparent !important; box-shadow: none !important; }
+        }
+        .ribbon {
+            position: absolute;
+            top: 20px;
+            left: -35px;
+            background-color: #f43f5e;
+            color: white;
+            padding: 6px 45px;
+            transform: rotate(-30deg);
+            font-weight: 900;
+            font-size: 1.2rem;
+            z-index: 50;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .price-text {
+            color: #f43f5e !important;
+            line-height: 0.85;
+        }
+        .img-aspect {
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: #fef2f2;
+        }
+        
+        /* 編集可能エリアのスタイル */
+        [contenteditable="true"] {
+            outline: none;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+        }
+        [contenteditable="true"]:hover {
+            cursor: text;
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.2);
+        }
+        [contenteditable="true"]:focus {
+            background-color: white;
+            box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.5);
+        }
+        .ribbon[contenteditable="true"]:hover {
+            background-color: #e11d48;
+            box-shadow: none;
+        }
+        .ribbon[contenteditable="true"]:focus {
+            background-color: #be123c;
+            box-shadow: 0 0 0 2px white;
+        }
+        .time-badge[contenteditable="true"]:hover {
+            background-color: #e11d48;
+            box-shadow: none;
+        }
+        .time-badge[contenteditable="true"]:focus {
+            background-color: #be123c;
+            box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-paper bg-gradient-to-b from-rose-50 via-white to-white border-[10px] border-rose-100">
+        
+        <!-- リボン装飾 (クリックして編集可能) -->
+        <div class="ribbon" contenteditable="true" spellcheck="false">4月限定</div>
+
+        <!-- キャッチコピー -->
+        <div class="text-center mb-2 mt-4">
+            <p class="text-rose-400 font-bold text-sm tracking-[0.3em] mb-0.5 italic">BEAUTY & WELLNESS</p>
+            <h1 class="font-serif text-[2.6rem] font-black text-gray-800 mb-1 leading-tight">
+                <span class="text-lg block text-rose-500 mb-0.5 font-sans font-bold">＼ 理想の自分へ ／</span>
+                新規会員キャンペーン
+            </h1>
+            <p class="text-xs font-bold text-rose-600 bg-white px-6 py-1 rounded-full border border-rose-200 inline-block shadow-sm">
+                不調改善も肌質改善も体形管理もすべてここで叶う♪
+            </p>
+        </div>
+
+        <!-- 施術イメージ写真 -->
+        <div class="grid grid-cols-4 gap-2 mb-3">
+            <div class="flex flex-col gap-1 text-center">
+                <!-- 整体の写真をアップロードされたものに変更 -->
+                <img src="seitai.jpg" alt="整体・矯正" class="img-aspect" onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=300&q=80'">
+                <span class="text-[9px] font-bold text-gray-600">整体・小顔・骨盤矯正</span>
+            </div>
+            <div class="flex flex-col gap-1 text-center">
+                <img src="training.jpg" alt="トレーニング" class="img-aspect">
+                <span class="text-[9px] font-bold text-gray-600">パーソナルトレーニング</span>
+            </div>
+            <div class="flex flex-col gap-1 text-center">
+                <img src="esthe.jpg" alt="エステ" class="img-aspect">
+                <span class="text-[9px] font-bold text-gray-600">脂肪分解エステ</span>
+            </div>
+            <div class="flex flex-col gap-1 text-center">
+                <img src="hadakanri.jpg" alt="肌管理" class="img-aspect">
+                <span class="text-[9px] font-bold text-gray-600">ダウンタイムゼロ肌管理</span>
+            </div>
+        </div>
+
+        <!-- 選べるメニューエリア -->
+        <div class="bg-white rounded-[1.5rem] shadow-sm px-4 py-2.5 mb-3 border border-rose-100 flex-grow flex flex-col justify-center">
+            <h3 class="text-center text-base font-bold text-gray-700 mb-2.5 pb-1 border-b-2 border-dashed border-rose-200">
+                1か月に下記のメニューを<span class="text-rose-600 text-xl mx-1 font-black underline underline-offset-4">2つ</span>選択できます
+            </h3>
+
+            <!-- 各メニューと時間をcontenteditable="true"で編集可能に -->
+            <ul class="space-y-1.5">
+                <li class="flex items-center justify-between bg-rose-50/30 p-2 rounded-xl border border-white">
+                    <span class="font-bold text-gray-800 text-[15px] italic px-1" contenteditable="true" spellcheck="false">・女性のための整体（小顔・骨盤矯正）</span>
+                    <span class="time-badge bg-rose-500 text-white px-2 py-0.5 rounded-full font-bold text-[11px]" contenteditable="true" spellcheck="false">50分</span>
+                </li>
+                <li class="flex items-center justify-between bg-rose-50/30 p-2 rounded-xl border border-white">
+                    <span class="font-bold text-gray-800 text-[15px] italic px-1" contenteditable="true" spellcheck="false">・女性のためのパーソナルトレーニング</span>
+                    <span class="time-badge bg-rose-500 text-white px-2 py-0.5 rounded-full font-bold text-[11px]" contenteditable="true" spellcheck="false">25分</span>
+                </li>
+                <li class="flex items-center justify-between bg-rose-50/30 p-2 rounded-xl border border-white">
+                    <span class="font-bold text-gray-800 text-[15px] italic px-1" contenteditable="true" spellcheck="false">・脂肪分解エステ（2部位選択）</span>
+                    <span class="time-badge bg-rose-500 text-white px-2 py-0.5 rounded-full font-bold text-[11px]" contenteditable="true" spellcheck="false">45分</span>
+                </li>
+                <li class="flex items-center justify-between bg-rose-50/30 p-2 rounded-xl border border-white">
+                    <span class="font-bold text-gray-800 text-[15px] italic px-1" contenteditable="true" spellcheck="false">・ダウンタイムゼロ肌管理</span>
+                    <span class="time-badge bg-rose-500 text-white px-2 py-0.5 rounded-full font-bold text-[11px]" contenteditable="true" spellcheck="false">25分</span>
+                </li>
+                <li class="flex items-center justify-between bg-rose-50/30 p-2 rounded-xl border border-white">
+                    <span class="font-bold text-gray-800 text-[15px] italic px-1" contenteditable="true" spellcheck="false">・リラックスフェイシャル <span class="text-[10px] font-normal text-gray-400">※曜日限定</span></span>
+                    <span class="time-badge bg-rose-500 text-white px-2 py-0.5 rounded-full font-bold text-[11px]" contenteditable="true" spellcheck="false">40分</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 通い放題特典 -->
+        <div class="bg-rose-500 rounded-xl p-3 mb-3 text-center text-white shadow-md">
+            <p class="text-[10px] font-bold mb-0.5">さらに！これだけではありません</p>
+            <p class="text-xl font-black tracking-widest">
+                グループレッスンも <span class="text-yellow-300 border-b-2 border-yellow-300">通い放題</span>
+            </p>
+        </div>
+
+        <!-- 最終価格エリア -->
+        <div class="bg-white border-[5px] border-rose-500 rounded-[2rem] p-4 text-center shadow-xl relative mt-auto mb-2">
+            <div class="mb-1.5 leading-tight">
+                <span class="text-gray-500 text-[15px] font-bold line-through decoration-red-400 decoration-2">通常価格 月額39,890円</span>
+                <p class="text-[10px] text-gray-500 mt-0.5">（エステ2回＋レッスン通い放題の場合）</p>
+            </div>
+
+            <div class="inline-block bg-rose-600 text-white px-5 py-0.5 rounded-full text-base font-bold mb-1">
+                キャンペーン価格
+            </div>
+
+            <div class="flex items-center justify-center gap-1">
+                <span class="text-rose-600 font-black text-2xl mt-4">月額</span>
+                <span class="price-text font-serif font-black text-[5.8rem] tracking-tighter">
+                    15,000
+                </span>
+                <div class="text-left leading-none mt-4">
+                    <span class="text-rose-600 font-black text-2xl block mb-1">円</span>
+                    <span class="text-rose-600 font-bold text-sm">(税込)</span>
+                </div>
+            </div>
+
+            <!-- 得ラベル -->
+            <div class="absolute -top-3 -right-2 bg-yellow-400 text-white w-12 h-12 rounded-full flex flex-col items-center justify-center font-black shadow-lg border-2 border-white rotate-12">
+                <span class="text-[9px]">おトク!</span>
+                <span class="text-lg">値引</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
